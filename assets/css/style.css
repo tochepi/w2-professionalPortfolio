@@ -11,7 +11,8 @@
 }
 
 body {
-    color: var(--base);
+    background-color: var(--base);
+    color: var(--med-blue);
     font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -69,11 +70,10 @@ header nav ul li a:hover {
     flex-wrap: wrap;
     align-items: center;
 }
-.hero-profile {
+.hero img {
     height: 150px;
     width: 150px;
     border-radius: 50%;
-    background-image: url(../images/placeholder.jpeg);
     background-size: cover;
     border: 5px solid var(--light-blue);
     margin-right: -5px;
@@ -90,25 +90,52 @@ header nav ul li a:hover {
 /* HERO/JUMBO style end */
 
 /* ABOUT ME style start */
+.about-me p {
+    font-size: 12px;
+}
 /* ABOUT ME style end */
 
 /* WORK style start */
 /* WORK style end */
 
 /* CONTACT ME style start */
+.contact-info a {
+    text-decoration: none;
+}
+.contact-info ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+.contact-info ul li {
+    padding: 10px 10px;
+    font-size: 1.5vw;
+    margin-right: 10px;
+}
+.contact-info ul li a {
+    color: var(--dark-blue);
+    border-bottom: 2px solid var(--med-blue);
+    border-width: min-content;
+    padding-bottom: 2px;
+}
+.contact-info ul li a:hover {
+    color: var(--light-blue);
+}
 /* CONTACT ME style end */
 
 /* UTILITIES start */
 .section-title {
-    font-size: 48px;
+    font-size: 40px;
     color: var(--med-blue);
     padding-right: 20px;
     text-align: right;
     margin: 35px auto 0 auto;
-    width: 25%;
+    flex: 1 30%;
 }
 .section-content {
-    width: 75%;
+    flex: 2 70%;
     padding-left: 50px;
     margin: 35px auto 0 auto;
     color: var(--med-blue);
@@ -124,10 +151,12 @@ header nav ul li a:hover {
 
 
 /* MEDIA QUERY start */
+@media screen and (max-width: 950px) {
+    .section-title {
+        font-size: 4w;
+    }
+}
 @media screen and (max-width: 700px) {
-    /*header {
-        display: inline;
-    }*/
     header h1{
         width: 100%;
         text-align: center;
@@ -148,7 +177,7 @@ header nav ul li a:hover {
         flex-direction: column;
         justify-content: center;
     }
-    .hero-profile {
+    .hero img {
         height: 100px;
         width: 100px;
         margin-bottom: 10px;
@@ -156,6 +185,26 @@ header nav ul li a:hover {
     .hero h2 {
         margin: 0;
         text-align: center;
+    }
+    .contact-info ul li{
+        font-size: 14px;
+    }
+    .flex-row {
+        display: inline;
+    }
+    .section-title {
+        font-size: 4vw;
+        padding: 5px 0;
+        text-align: left;
+        width: 80%;
+    }
+    .section-content {
+        width: 80%;
+        padding: 20px 0;
+        color: var(--med-blue);
+        border-top: 4px solid;
+        border-left: none;
+        margin: 0 auto;
     }
 }
 /* MEDIA QUERY end */
